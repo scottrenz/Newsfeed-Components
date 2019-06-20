@@ -32,7 +32,6 @@ class Article {
 */
 
 let artString  = ' ';
-artString = ' </div>'
 artString = artString  +  '       <div class="article">'
 artString = artString  +  '       <h2>My test article</h2>'
 artString = artString  +  '       <p class="date">Nov 5th, 2017</p>'
@@ -55,6 +54,7 @@ artString = artString  +  '       naboo ackbar tatooine. Hutt lars padmé darth.
 artString = artString  +  '       han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'+'lek padmé wookiee. Leia'
 artString = artString  +  '       moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>'
 artString = artString  +  '       <span class='+'expandButton'+'></span>'
+artString = artString  +   ' </div>'
 
 let artString2 = artString.replace('My test','Next test')
 
