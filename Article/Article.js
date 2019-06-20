@@ -1,5 +1,6 @@
 // Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
+
 class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
@@ -15,8 +16,8 @@ class Article {
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle('menu--open')
-
+    this.domElement.classList.toggle('article-open')
+// console.log(this.domElement)
   }
 }
 
@@ -71,7 +72,8 @@ let articles = document.querySelectorAll('.article');
 
 articles.forEach(article => {
   new Article(article)
-console.log(article.textContent)
+
+// console.log(article.textContent)
 }
   )
 
