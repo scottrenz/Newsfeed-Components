@@ -15,7 +15,7 @@ class Article {
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.article.classList.toggle('close')
+    this.domElement.classList.toggle('menu--open')
 
   }
 }
@@ -30,41 +30,49 @@ class Article {
 
 */
 
+let artString  = ' ';
+artString = ' </div>'
+artString = artString  +  '       <div class="article">'
+artString = artString  +  '       <h2>My test article</h2>'
+artString = artString  +  '       <p class="date">Nov 5th, 2017</p>'
+
+artString = artString  +  '       <p>Lucas ipsum dolor sit amet ben twi'+'lek padmé darth darth darth moff hutt organa twi'+'lek. Ben amidala secura skywalker lando'
+artString = artString  +  '       moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth baba skywalker'
+artString = artString  +  '       watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge utapau darth calamari.'
+artString = artString  +  '       Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker dantooine skywalker. Qui-gonn'
+artString = artString  +  '       jar twi'+'lek jinn leia jango skywalker mon. </p>'
+
+artString = artString  +  '       <p>Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi darth r2-d2'
+artString = artString  +  '       windu mothma. Sidious darth calamari moff. Wampa mothma sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine'
+artString = artString  +  '       mace amidala. C-3po solo skywalker anakin yoda leia. Maul wampa bespin watto jade ewok darth jabba. Lando dantooine moff'
+artString = artString  +  '       k-3po dantooine luke. Fisto mandalore darth wedge c-3p0 ahsoka. Secura moff palpatine fett. Anakin sith darth darth. Moff'
+artString = artString  +  '       solo leia ben ponda jade. Binks jango aayla skywalker skywalker cade. Mustafar darth ventress anakin watto. Yavin jawa sebulba'
+artString = artString  +  '       owen jinn tatooine sith organa.</p>'
+
+artString = artString  +  '       <p>Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious'
+artString = artString  +  '       naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket'
+artString = artString  +  '       han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'+'lek padmé wookiee. Leia'
+artString = artString  +  '       moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>'
+artString = artString  +  '       <span class='+'expandButton'+'></span>'
+
+let artString2 = artString.replace('My test','Next test')
+
+var d1 = document.querySelector('.articles');
+
+// d1.insertAdjacentHTML('beforeend', artString);
+d1.insertAdjacentHTML('afterbegin', artString);
+
+var d1 = document.querySelector('.articles');
+
+d1.insertAdjacentHTML('beforeend', artString2);
+// d1.insertAdjacentHTML('afterbegin', artString);
+
 let articles = document.querySelectorAll('.article');
 
 articles.forEach(article => {
   new Article(article)
-console.log(article)
+console.log(article.textContent)
 }
   )
 
-const mySpan = document.querySelectorAll('span')
-console.log(mySpan)
 
-
-// var d1 = document.createElement('div');
-// d1.insertAdjacentHTML('afterend',
-// '<div class="articles">
-//   <div class="article">
-//     <h2>Lambda School Students: "We'+'re the best!"</h2>
-//     <p class="date">Nov 5th, 2017</p>
-
-//     <p>Lucas ipsum dolor sit amet ben twi'+'lek padmé darth darth darth moff hutt organa twi'+'lek. Ben amidala secura skywalker lando
-//     moff wicket tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous darth gonk darth hutt. Darth baba skywalker
-//     watto fett jango maul han. Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda wedge utapau darth calamari.
-//     Hutt calamari darth jabba. Darth dooku amidala organa moff. Boba darth binks solo hutt skywalker dantooine skywalker. Qui-gonn
-//     jar twi'+'lek jinn leia jango skywalker mon. </p>
-
-//     <p>Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi darth r2-d2
-//     windu mothma. Sidious darth calamari moff. Wampa mothma sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine
-//     mace amidala. C-3po solo skywalker anakin yoda leia. Maul wampa bespin watto jade ewok darth jabba. Lando dantooine moff
-//     k-3po dantooine luke. Fisto mandalore darth wedge c-3p0 ahsoka. Secura moff palpatine fett. Anakin sith darth darth. Moff
-//     solo leia ben ponda jade. Binks jango aayla skywalker skywalker cade. Mustafar darth ventress anakin watto. Yavin jawa sebulba
-//     owen jinn tatooine sith organa.</p>
-
-//     <p>Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious
-//     naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
-//     han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'+'lek padmé wookiee. Leia
-//     moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.</p>
-//     <span class='+'expandButton'+'></span>
-//   </div>
