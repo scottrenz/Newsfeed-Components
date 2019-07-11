@@ -1,9 +1,12 @@
 // Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
-let article = document.querySelectorAll('.articles');
+let article = document.querySelectorAll('.articles')[0];
 
-  article[0].appendChild(
-  newArticle(2,'New Article', 'Jul 10th, 2019',['line 1','line 2'])
+article.appendChild(
+  newArticle('New Article', 'Jul 10th, 2019',['line 1','line 2','line 3'])
+  )
+  article.appendChild(
+  newArticle('Another Article', 'Jul 10th, 2019',['An interesting fact','A fact that knows it is not interesting.'])
   )
  
 class Article {
@@ -41,13 +44,13 @@ articles.forEach(article => {
 }
 )
 
-function newArticle(numofParagraphs,title,date,text) {
+function newArticle(title,date,text) {
   const divArticles = document.createElement('div');
   const divArticle = document.createElement('div');
   const h2 = document.createElement('h2');
   const pDate = document.createElement('p');
   const p = [];
-  for (i=0; i<numofParagraphs; i++)
+  for (i=0; i<text.length; i++)
 { p[i] = document.createElement('p')
 p[i].innerHTML = text[i]
 }
@@ -61,13 +64,11 @@ pDate.innerHTML = date;
 divArticles.appendChild(divArticle)
 divArticle.appendChild(h2)
 divArticle.appendChild(pDate)
-for (i=0; i<numofParagraphs; i++)
+for (i=0; i<text.length; i++)
 {
   divArticle.appendChild(p[i])
 }
 divArticle.appendChild(expandButton)
-// document.body.appendChild(divArticles);
-
 
 return divArticle
 }
