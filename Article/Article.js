@@ -6,9 +6,12 @@ article.appendChild(
   newArticle('New Article', 'Jul 10th, 2019',['line 1','line 2','line 3'])
   )
   article.appendChild(
-  newArticle('Another Article', 'Jul 10th, 2019',['An interesting fact','A fact that knows it is not interesting.'])
-  )
- 
+    newArticle('Another Article', 'Jul 10th, 2019',['An interesting fact','A fact that knows it is not interesting.'])
+    )
+    article.appendChild(
+      newArticle('Arrayless Article', 'Jul 10th, 2019','An interesting fact. A fact that knows it is not interesting.')
+      )
+       
 class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
@@ -52,7 +55,10 @@ function newArticle(title,date,text) {
   const p = [];
   for (i=0; i<text.length; i++)
 { p[i] = document.createElement('p')
-p[i].innerHTML = text[i]
+if(typeof(text === 'string'))
+{ p[i].innerHTML = text;
+  break; }
+  p[i].innerHTML = text[i]
 }
   const expandButton = document.createElement('span')
   divArticles.classList.add('articles')
@@ -67,6 +73,8 @@ divArticle.appendChild(pDate)
 for (i=0; i<text.length; i++)
 {
   divArticle.appendChild(p[i])
+  if(typeof(text === 'string'))
+{break;}
 }
 divArticle.appendChild(expandButton)
 
