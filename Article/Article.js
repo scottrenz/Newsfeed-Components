@@ -55,7 +55,7 @@ function newArticle(title,date,text) {
   const p = [];
   for (i=0; i<text.length; i++)
 { p[i] = document.createElement('p')
-if(typeof(text === 'string'))
+if(typeof(text) != 'object')
 { p[i].innerHTML = text;
   break; }
   p[i].innerHTML = text[i]
@@ -73,7 +73,7 @@ divArticle.appendChild(pDate)
 for (i=0; i<text.length; i++)
 {
   divArticle.appendChild(p[i])
-  if(typeof(text === 'string'))
+  if(typeof(text) != 'object')
 {break;}
 }
 divArticle.appendChild(expandButton)
